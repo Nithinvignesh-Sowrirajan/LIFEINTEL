@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CCC6BB;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B5ACA0;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: #C8D9C8;
+    color: #1A1613;
+  }
+
+  /* Focus ring */
+  *:focus-visible {
+    outline: 2px solid #5F8A5F;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Smooth transitions for interactive elements */
+  button, a, input, select, textarea {
+    transition: all 0.15s ease;
+  }
+
+  /* Base body */
+  body {
+    overflow: hidden;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Surface variants */
+  .surface-primary {
+    @apply bg-ivory-100;
+  }
+  .surface-secondary {
+    @apply bg-ivory-200;
+  }
+  .surface-elevated {
+    @apply bg-white shadow-surface;
+  }
+  .surface-inset {
+    @apply bg-ivory-300/50;
+  }
+
+  /* Text variants */
+  .text-primary {
+    @apply text-espresso-800;
+  }
+  .text-secondary {
+    @apply text-espresso-500;
+  }
+  .text-tertiary {
+    @apply text-warmgray-500;
+  }
+  .text-accent {
+    @apply text-sage-600;
+  }
+
+  /* Dividers */
+  .divider {
+    @apply border-ivory-400/60;
+  }
+  .divider-subtle {
+    @apply border-ivory-300/80;
+  }
+
+  /* Badge base */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-subtle text-caption font-medium;
+  }
+  .badge-sage {
+    @apply badge bg-sage-100 text-sage-700;
+  }
+  .badge-terracotta {
+    @apply badge bg-terracotta-100 text-terracotta-700;
+  }
+  .badge-warmgray {
+    @apply badge bg-warmgray-100 text-warmgray-700;
+  }
+  .badge-espresso {
+    @apply badge bg-espresso-100 text-espresso-700;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-subtle 
+           font-body text-body-sm font-medium transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-sage-600 text-white hover:bg-sage-700 active:bg-sage-800;
+  }
+  .btn-secondary {
+    @apply btn bg-ivory-300 text-espresso-700 hover:bg-ivory-400 active:bg-ivory-500;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-espresso-600 hover:bg-ivory-200 active:bg-ivory-300;
+  }
+  .btn-danger {
+    @apply btn bg-terracotta-600 text-white hover:bg-terracotta-700 active:bg-terracotta-800;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-caption;
+  }
+  .btn-lg {
+    @apply px-6 py-3 text-body;
+  }
+
+  /* Input */
+  .input {
+    @apply w-full px-3 py-2 bg-white border border-ivory-400 rounded-subtle
+           text-body text-espresso-800 placeholder:text-warmgray-400
+           focus:outline-none focus:border-sage-500 focus:ring-1 focus:ring-sage-500/30
+           transition-colors duration-150;
+  }
+}
+
